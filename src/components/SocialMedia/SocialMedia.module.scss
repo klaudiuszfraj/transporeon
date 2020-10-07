@@ -1,8 +1,9 @@
+@import "../../scss/variables";
 .SocialMedia{
   display: flex;
   align-items: center;
   justify-content: center;
   a{
-    margin: 0 5px;
+    margin: 0 $base-spacing/2;
   }
 }
