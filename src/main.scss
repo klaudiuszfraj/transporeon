@@ -19,9 +19,14 @@ img, video, canvas {
   display: flex;
   flex-wrap: wrap;
 }
-
+@media (max-width: 900px) {
+  [class*='col-'] {
+    width: 50%;
+  }
+}
 @media (max-width: 550px) {
   [class*='col-'] {
     width: 100%;
   }
 }
+
