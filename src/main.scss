@@ -1,16 +1,12 @@
-
-$color-primary: #fcc31f;
-$color-secondary: #4e4d43;
-
-//$font-primary: "SeravekWeb","Helvetica Neue",Helvetica,Arial,sans-serif;
-$font-primary: 'Lato', 'Arial', sans-serif;;
-
+@import "./scss/variables";
 *{
   box-sizing: border-box;
 }
 body{
-  color: $color-secondary;
+  color: $color-text;
   font-family: $font-primary;
-
+}
+.container{
+  max-width: 1300px;
 }
 
