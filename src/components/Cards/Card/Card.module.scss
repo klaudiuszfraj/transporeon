@@ -1,11 +1,13 @@
-@import "../../scss/variables";
+@import "../../../scss/variables";
 .card{
-  width: 245px;
-  height: 400px;
+  margin: 15px;
   h3{
     font-size: 1.1rem;
+    margin: 5px 0 8px 0;
+    font-weight: bold;
   }
-  img{
-    
+  p::before, p::after{
+    content: '"';
   }
+
 }
