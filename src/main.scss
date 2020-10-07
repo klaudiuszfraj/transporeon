@@ -6,7 +6,22 @@ body{
   color: $color-text;
   font-family: $font-primary;
 }
+img, video, canvas {
+  max-width: 100%;
+}
 .container{
   max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
+@media (max-width: 550px) {
+  [class*='col-'] {
+    width: 100%;
+  }
+}
