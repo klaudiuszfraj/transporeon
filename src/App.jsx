@@ -1,4 +1,5 @@
 import React from 'react';
+import './scss/reset.scss'
 import './main.scss';
 import Header from "./components/Header/Header";
 import Video from "./components/Video/Video";
