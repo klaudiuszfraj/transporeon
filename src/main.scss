@@ -1,0 +1,16 @@
+
+$color-primary: #fcc31f;
+$color-secondary: #4e4d43;
+
+//$font-primary: "SeravekWeb","Helvetica Neue",Helvetica,Arial,sans-serif;
+$font-primary: 'Lato', 'Arial', sans-serif;;
+
+*{
+  box-sizing: border-box;
+}
+body{
+  color: $color-secondary;
+  font-family: $font-primary;
+
+}
+
