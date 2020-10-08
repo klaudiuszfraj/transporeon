@@ -1,0 +1,36 @@
+@import "../../scss/variables";
+.Form{
+  background-color: #1f2837;
+  padding: $base-spacing 0;
+  h2{
+    color: #fff;
+    font-size: 1.5rem;
+    padding: $base-spacing 0;
+  }
+  form{
+    text-align: center;
+    .input{
+      padding: 15px 10px;
+    }
+    input{
+      width: 100%;
+      padding: 10px 15px;
+      outline: none;
+      border: 2px solid transparent;
+      &:focus{
+        border: 2px solid $color-primary;
+      }
+      &[class*=error]{
+        border: 2px solid #de7373;
+      }
+    }
+    button{
+      background-color: $color-primary;
+      font-size: 1.1rem;
+      padding: 20px 30px;
+      border-radius: 25px;
+      color: $color-text;
+      text-transform: uppercase;
+    }
+  }
+}
