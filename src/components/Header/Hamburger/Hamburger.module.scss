@@ -1,0 +1,19 @@
+@import "../../../scss/variables";
+
+.Hamburger {
+  background-color: transparent;
+  justify-self: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: none;
+  .Ham {
+    height: 7px;
+    width: 100%;
+    background-color: $color-text;
+    border-radius: 3px;
+  }
+}
