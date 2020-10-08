@@ -3,7 +3,7 @@ import style from './Navigation.module.scss';
 
 function Navigation() {
  return (
-     <nav>
+     <nav className={style.Navigation}>
          <a href="##">Platform</a>
          <a href="##">Products</a>
          <a href="##">Your Advantages</a>
