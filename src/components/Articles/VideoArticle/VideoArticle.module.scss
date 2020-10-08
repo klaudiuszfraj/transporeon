@@ -16,4 +16,15 @@
       margin-bottom: $base-spacing;
     }
   }
+  [class*=row]{
+    align-items: center;
+  }
+  [class*=isVideoRight] {
+    flex-direction: row-reverse;
+    &>div:first-child{
+      padding-left: $base-spacing*2;
+    }
+
+  }
+
 }
