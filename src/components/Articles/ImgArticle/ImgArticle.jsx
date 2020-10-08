@@ -10,7 +10,7 @@ function ImgArticle({mainTitle, mainArticle, imgSrc}) {
                     <h1>{mainTitle}</h1>
                     <p>{mainArticle}</p>
                 </div>
-                <div className="col-4">
+                <div className={classNames('col-4', style.imgContainer)}>
                     <img src={imgSrc} alt={mainTitle}/>
                 </div>
             </div>
