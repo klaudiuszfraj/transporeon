@@ -12,8 +12,12 @@ import ImgArticle from "./components/Articles/ImgArticle/ImgArticle";
 import VideoArticle from "./components/Articles/VideoArticle/VideoArticle";
 import Footer from "./components/Footer/Footer";
 import Form from "./components/Form/Form";
+//todo :: imports
+
+
 
 function App() {
+    //  todo:: user info
   return (
     <div className="App">
       <Header/>
