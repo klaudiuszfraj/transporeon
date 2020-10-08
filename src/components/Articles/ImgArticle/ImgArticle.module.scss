@@ -19,4 +19,20 @@
   .imgContainer{
     text-align: right;
   }
+  [class*=isImgRight]{
+    flex-direction: row-reverse;
+    .imgContainer{
+      padding-right: $base-spacing;
+      @media (max-width: 550px) {
+        text-align: center;
+        padding-right: 0;
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    .imgContainer{
+      text-align: center;
+      padding: 0;
+    }
+  }
 }
