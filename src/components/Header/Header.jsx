@@ -39,7 +39,7 @@ function Header() {
             href: '#AboutUs',
         }
     ]
-
+    console.log(showMenu);
     return (
         <>
             <header className={classNames(style.header)}>
