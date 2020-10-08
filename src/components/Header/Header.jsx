@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import {ReactComponent as TransporeonLogo} from '../../assets/transporeon_logo.svg';
 import Navigation from "./Navigation/Navigation";
 import Hamburger from "./Hamburger/Hamburger";
+import SignIn from "./SignIn/SignIn";
+import SignOut from "./SignOut/SignOut";
 
 
 function Header() {
@@ -43,6 +45,10 @@ function Header() {
     return (
         <>
             <header className={classNames(style.header)}>
+                <div className={classNames('container', style.SingInOut)}>
+                    <SignIn/>
+                    <SignOut/>
+                </div>
                 <div className={'container'}>
                     <TransporeonLogo/>
                     <Navigation links={links}/>
