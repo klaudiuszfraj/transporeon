@@ -6,7 +6,6 @@ import Navigation from "./Navigation/Navigation";
 import Hamburger from "./Hamburger/Hamburger";
 
 
-console.log(window.innerWidth);
 function Header() {
 
     const [showMenu, setShowMenu] = useState(false)
