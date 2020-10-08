@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import style from './Header.module.scss';
 import classNames from 'classnames';
 import {ReactComponent as TransporeonLogo} from '../../assets/transporeon_logo.svg';
@@ -7,10 +7,18 @@ import Hamburger from "./Hamburger/Hamburger";
 import SignIn from "./SignIn/SignIn";
 import SignOut from "./SignOut/SignOut";
 
+import firebase from "../../firebase";
+import {getDataOnce} from "../../functions";
+
 
 function Header() {
-
     const [showMenu, setShowMenu] = useState(false)
+    const [navLinks, setNavLinks] = useState([])
+
+    useEffect(()=>{
+        const linksRef = firebase.firestore().collection('links');
+        getDataOnce(setNavLinks, linksRef)
+    },[])
     const links = [
         {
             name: 'Platform',
