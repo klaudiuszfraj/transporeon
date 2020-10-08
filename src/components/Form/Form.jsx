@@ -116,7 +116,7 @@ function Form() {
                 <h2>Get in touch with us!</h2>
                 <form>
                     {inputs.map(input => (
-                        <div className={classNames("row", style.input)}>
+                        <div key={input.name} className={classNames("row", style.input)}>
                             <input type={input.type} name={input.name} placeholder={input.placeholder} value={input.value} onChange={e=>handleInputs(e)} className={classNames({'error': errors[input.name]})}/>
                         </div>
                     ))}
