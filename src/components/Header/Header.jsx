@@ -19,37 +19,6 @@ function Header() {
         const linksRef = firebase.firestore().collection('links');
         getDataOnce(setNavLinks, linksRef)
     },[])
-    const links = [
-        {
-            name: 'Platform',
-            href: '#Platform',
-        },
-        {
-            name: 'Products',
-            href: '#Products',
-        },
-        {
-            name: 'Your Advantages',
-            href: '#YourAdvantages',
-        },
-        {
-            name: 'Insights',
-            href: '#Insights',
-        },
-        {
-            name: 'Expertise',
-            href: '#Expertise',
-        },
-        {
-            name: 'Carreer',
-            href: '#Carreer',
-        },
-        {
-            name: 'About Us',
-            href: '#AboutUs',
-        }
-    ]
-    console.log(showMenu);
     return (
         <>
             <header className={classNames(style.header)}>
@@ -59,7 +28,7 @@ function Header() {
                 </div>
                 <div className={'container'}>
                     <TransporeonLogo/>
-                    <Navigation links={links}/>
+                    <Navigation links={navLinks}/>
                     <Hamburger handleShowMenu={setShowMenu}/>
                 </div>
             </header>
