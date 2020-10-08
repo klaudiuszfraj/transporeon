@@ -19,6 +19,9 @@
   .imgContainer{
     text-align: right;
   }
+  [class*=row]{
+    align-items: center;
+  }
   [class*=isImgRight]{
     flex-direction: row-reverse;
     .imgContainer{
