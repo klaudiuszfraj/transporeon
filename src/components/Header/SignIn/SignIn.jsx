@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './SignIn.module.scss'
-import firebase from "firebase/app";
+import firebase from "../../../firebase";
 
 
 function SignIn() {
