@@ -1,0 +1,29 @@
+@import "../../scss/variables";
+.Footer{
+  margin: $base-spacing auto;
+  color: #fff;
+  background-color: $color-text;
+  padding: $base-spacing*2 0;
+  border-top: 5px solid $color-primary;
+  p{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: $base-spacing;
+    @media (max-width: 900px) {
+      margin-top: $base-spacing;
+    }
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .productsList{
+    column-count: 3;
+    @media (max-width: 900px) {
+      column-count: 2;
+    }
+    @media (max-width: 400px) {
+      column-count: 1;
+    }
+  }
+}
