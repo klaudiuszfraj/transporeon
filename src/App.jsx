@@ -1,11 +1,37 @@
-import React from 'react';
+import React, { useState,useEffect} from 'react';
 import './scss/reset.scss'
 import './main.scss';
 import { Header, Video, Cards, FullWidthImage, SocialMedia, MainArticle, SecondaryArticle, ImgArticle, VideoArticle, Form, Footer} from "./components";
+import firebase from "./firebase";
+import {getDataOnce} from "./functions";
 
 
 function App() {
-    //  todo:: user info
+    const [mainArticle, setMainArticle] = useState([])
+    const [secondaryArticle, setSecondaryArticle] = useState([])
+    const [imgArticle, setImgArticle] = useState([])
+    const [videoArticle, seVideoArticle] = useState([])
+    const [fullWidthImageLink, setFullWidthImageLink] = useState([])
+
+    useEffect(()=>{
+        const mainArticleRef = firebase.firestore().collection('mainArticle');
+        const secondaryArticleRef = firebase.firestore().collection('secondaryArticle');
+        const imgArticleRef = firebase.firestore().collection('imgArticle');
+        const videoArticleRef = firebase.firestore().collection('videoArticle');
+        const fullWidthImageLinkRef = firebase.firestore().collection('fullWidthImageLink');
+        getDataOnce(setMainArticle, mainArticleRef)
+        getDataOnce(setSecondaryArticle, secondaryArticleRef)
+        getDataOnce(setImgArticle, imgArticleRef)
+        getDataOnce(seVideoArticle, videoArticleRef)
+        getDataOnce(setFullWidthImageLink, fullWidthImageLinkRef)
+        //todo::wykożystać
+        // firebase.firestore().collection('cards').add(        {
+        //     title: 'Meet Andrzej',
+        //     cardText: 'Understanding the different regulations accross countries helped me deal with all the daily uncertainties.',
+        //     imgSrc: 'https://www.transporeon.com/fileadmin/expertise/insights/special/Trucker_heroes/Trasko_Mikhail.jpg'
+        // })
+    },[])
+
   return (
     <div className="App">
       <Header/>
@@ -13,14 +39,12 @@ function App() {
       <Cards/>
       <FullWidthImage imgSrc={'https://www.transporeon.com/fileadmin/_processed_/a/1/csm_transporeon_kc_tracking_visibilty_722935bae0.jpg'}/>
       <SocialMedia/>
-      <MainArticle mainArticle={'During a time when so many of us stayed home to stay safe, thousands of #TruckerHeroes around the world kept their wheels turning. These men and women continued to drive trucks, pilot planes, sail ships, and load cargo in order to keep our supply chains running.'} mainTitle={'What does it mean to be one of our #TruckerHeroes?'}/>
-      <SecondaryArticle mainArticle={'During a time when so many of us stayed home to stay safe, thousands of #TruckerHeroes around the world kept their wheels turning. These men and women continued to drive trucks, pilot planes, sail ships, and load cargo in order to keep our supply chains running.'} mainTitle={'What does it mean to be one of our #TruckerHeroes?'}/>
-      <ImgArticle mainArticle={'During a time when so many of us stayed home to stay safe, thousands of #TruckerHeroes around the world kept their wheels turning. These men and women continued to drive trucks, pilot planes, sail ships, and load cargo in order to keep our supply chains running.'} mainTitle={'What does it mean to be one of our #TruckerHeroes?'} imgSrc={'https://www.transporeon.com/fileadmin/general/Project_X/TRS_RTV_Push_Image_ETA_400x420.jpg'}/>
-      <ImgArticle isImgRight={true} mainArticle={'During a time when so many of us stayed home to stay safe, thousands of #TruckerHeroes around the world kept their wheels turning. These men and women continued to drive trucks, pilot planes, sail ships, and load cargo in order to keep our supply chains running.'} mainTitle={'What does it mean to be one of our #TruckerHeroes?'} imgSrc={'https://www.transporeon.com/fileadmin/general/Project_X/TRS_RTV_Push_Image_ETA_400x420.jpg'}/>
-      <VideoArticle mainArticle={'During a time when so many of us stayed home to stay safe, thousands of #TruckerHeroes around the world kept their wheels turning. These men and women continued to drive trucks, pilot planes, sail ships, and load cargo in order to keep our supply chains running.'} mainTitle={'What does it mean to be one of our #TruckerHeroes?'} videoSrc={'https://www.youtube.com/embed/IJamwjgm6_8'}/>
-      <VideoArticle isVideoRight={true} mainArticle={'During a time when so many of us stayed home to stay safe, thousands of #TruckerHeroes around the world kept their wheels turning. These men and women continued to drive trucks, pilot planes, sail ships, and load cargo in order to keep our supply chains running.'} mainTitle={'What does it mean to be one of our #TruckerHeroes?'} videoSrc={'https://www.youtube.com/embed/IJamwjgm6_8'}/>
+        {mainArticle.map(article => <MainArticle mainTitle={article.mainTitle} mainArticle={article.mainArticle}/>)}
+        {secondaryArticle.map(article => <SecondaryArticle mainTitle={article.mainTitle} mainArticle={article.mainArticle}/>)}
+        {imgArticle.map(article => <ImgArticle mainTitle={article.mainTitle} mainArticle={article.mainArticle} isImgRight={article.isImgRight} imgSrc={article.imgSrc}/>)}
+        {videoArticle.map(article => <VideoArticle mainTitle={article.mainTitle} mainArticle={article.mainArticle} isVideoRight={article.isVideoRight} videoSrc={article.videoSrc}/>)}
       <Form/>
-        <Footer/>
+      <Footer/>
     </div>
   );
 }
