@@ -14,11 +14,20 @@ import {getDataOnce} from "../../functions";
 function Header() {
     const [showMenu, setShowMenu] = useState(false)
     const [navLinks, setNavLinks] = useState([])
+    const [isLogged, setIsLogged] = useState(false)
 
     useEffect(()=>{
         const linksRef = firebase.firestore().collection('links');
         getDataOnce(setNavLinks, linksRef)
     },[])
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            setIsLogged(true)
+        } else {
+            setIsLogged(false)
+        }
+    });
+
     return (
         <>
             <header className={classNames(style.header)}>
