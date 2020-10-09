@@ -12,5 +12,7 @@ firebase.initializeApp({
     appId: "1:161867115545:web:b8f2d41425be8203404e88",
     measurementId: "G-6X1NPF53Q9"
 })
+// const analytics = firebase.analytics();
+
 
 export default firebase;
