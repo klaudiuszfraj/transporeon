@@ -1,19 +1,7 @@
 import React from 'react';
 import './scss/reset.scss'
 import './main.scss';
-import Header from "./components/Header/Header";
-import Video from "./components/Video/Video";
-import Cards from "./components/Cards/Cards";
-import FullWidthImage from "./components/FullWidthImage/FullWidthImage";
-import SocialMedia from "./components/SocialMedia/SocialMedia";
-import MainArticle from "./components/Articles/MainArticle/MainArticle";
-import SecondaryArticle from "./components/Articles/SecondaryArticle/SecondaryArticle";
-import ImgArticle from "./components/Articles/ImgArticle/ImgArticle";
-import VideoArticle from "./components/Articles/VideoArticle/VideoArticle";
-import Footer from "./components/Footer/Footer";
-import Form from "./components/Form/Form";
-//todo :: imports
-
+import { Header, Video, Cards, FullWidthImage, SocialMedia, MainArticle, SecondaryArticle, ImgArticle, VideoArticle, Form, Footer} from "./components";
 
 
 function App() {
