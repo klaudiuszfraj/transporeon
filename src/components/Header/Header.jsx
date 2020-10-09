@@ -32,8 +32,7 @@ function Header() {
         <>
             <header className={classNames(style.header)}>
                 <div className={classNames('container', style.SingInOut)}>
-                    <SignIn/>
-                    <SignOut/>
+                    {isLogged? <SignOut/>: <SignIn/>}
                 </div>
                 <div className={'container'}>
                     <TransporeonLogo/>
