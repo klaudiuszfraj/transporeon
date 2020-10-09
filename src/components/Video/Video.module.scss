@@ -1,5 +1,8 @@
 @import "../../scss/variables";
 .Hero {
+  @media (min-width: 1000px) {
+    display: none;
+  }
   figure {
     height: 0;
     padding-bottom: 56.25%; /* 16:9 */
